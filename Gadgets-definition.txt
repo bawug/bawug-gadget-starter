@@ -1,0 +1,2 @@
+==workshop==
+* HelloStarter[ResourceLoader]|Gadget-HelloStarter.js|Gadget-HelloStarter.css

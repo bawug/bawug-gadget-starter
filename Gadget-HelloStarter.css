@@ -1,0 +1,12 @@
+/* bawug-gadget-starter — Gadget-HelloStarter.css
+ * Lives at MediaWiki:Gadget-HelloStarter.css on the wiki.
+ */
+
+.hello-starter-banner {
+	background: #eaf3ff;
+	border: 1px solid #a3bff0;
+	border-radius: 4px;
+	padding: 0.5em 0.75em;
+	margin: 0 0 1em 0;
+	font-size: 0.95em;
+}

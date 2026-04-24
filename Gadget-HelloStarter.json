@@ -1,0 +1,5 @@
+{
+	"description": "Workshop demo gadget. Adds a hello banner to the top of articles.",
+	"author": "bawug-gadget-starter",
+	"license": "Apache-2.0"
+}
