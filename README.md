@@ -38,6 +38,5 @@ Adds a colored banner at the top of every article saying "Hello from bawug-gadge
 
 ## Going further
 
-- [Help:Gadgets](https://www.mediawiki.org/wiki/Help:Gadgets) — full options reference.
-- [Extension:Gadgets](https://www.mediawiki.org/wiki/Extension:Gadgets) — how the system is implemented.
+- [Extension:Gadgets](https://www.mediawiki.org/wiki/Extension:Gadgets) — full options reference and how the system is implemented.
 - For the next level, see [Gadgets 2.0 / GadgetDefinitionContent](https://www.mediawiki.org/wiki/Extension:Gadgets/Gadgets_2.0).
