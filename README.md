@@ -4,11 +4,21 @@ A minimal **MediaWiki gadget**: a user script packaged so that anyone on the wik
 
 ## Gadget vs. user script
 
-User scripts (see `bawug-userscript-starter`) live in your personal `common.js` and only run for you.
+User scripts (see [`bawug-userscript-starter`](https://github.com/bawug/bawug-userscript-starter/)) live in your personal `common.js` and only run for you.
 
-Gadgets are the same kind of code — JavaScript and CSS — but stored in the **`MediaWiki:`** namespace and listed in `MediaWiki:Gadgets-definition`. Once defined, every logged-in editor can enable the gadget from their preferences. Some gadgets can even be configured to run by default for all readers.
+Gadgets are the same kind of code — JavaScript and CSS — but stored in the **`MediaWiki:`** namespace and listed in `MediaWiki:Gadgets-definition`. Once defined, every logged-in editor can enable the gadget from their preferences. Some gadgets can even be configured to run by default for all readers. **NOTE**: This is the `MediaWiki:` namespace, even on English Wikipedia.
 
-Editing the `MediaWiki:` namespace requires *interface admin* (or *administrator*, depending on the wiki). For development, run a local MediaWiki or use the [Beta Cluster](https://en.wikipedia.beta.wmflabs.org).
+Editing the `MediaWiki:` namespace requires *interface admin*. For development, run a local MediaWiki or use the [Beta Cluster](https://en.wikipedia.beta.wmflabs.org).
+
+## Why choose a gadget over a user script?
+
+1. **Reach.** A user script only reaches users who have manually pasted it (or a one line loader for it) into their own `common.js`. A gadget can be made available wiki-wide as an opt-in checkbox in Preferences, or even default-on for everyone, so it can change the experience without each adopter touching their JS.
+2. **Anonymous readers.** User scripts only load for logged-in users, since they live under your `User:` page. A gadget can be configured to load for logged-out readers too, which matters because drive-by traffic far outpaces logged-in traffic on Wikipedia.
+3. **CSS.** A user script is JavaScript-only. You can inject styles from JS, but you can't ship a stylesheet. Gadgets package `.css` files as first-class assets alongside their JS.
+4. **Discoverability.** Gadgets appear in `Special:Preferences` with a name and description, so anyone browsing settings can find and enable them. User scripts only exist if someone tells you about them and you copy code into your `common.js` by hand.
+5. **Packaging.** Gadgets are first-class ResourceLoader modules, with all the metadata that implies: declared dependencies, multi-file bundles, skin and platform targets (`targets=desktop,mobile`), namespace restrictions, rights gating (`rights=patrol`), and package modules with a `main` entry point. Anything beyond a single self-contained file pushes a user script toward awkward workarounds.
+6. **Performance.** Gadgets load through the same ResourceLoader pipeline as MediaWiki core — cached, minified, and batched into the page's startup modules. User scripts run later in the page lifecycle and aren't optimized the same way.
+7. **Review and trust.** Promotion to a gadget goes through interface-admin gating, and on most projects a community proposal step. That's friction by design: code that runs in every reader's browser deserves a higher review bar than code only you have installed.
 
 ## What this gadget does
 
